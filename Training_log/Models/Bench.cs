@@ -11,11 +11,17 @@ namespace Training_log.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Bench
     {
         public int Id { get; set; }
+
+        [Display(Name = "Date")]
+        [Required]
         public System.DateTime DateOfLift { get; set; }
+        [Display(Name = "Weight")]
+        [Required]
         public double WeightKG { get; set; }
         public int Repetitions { get; set; }
     }
