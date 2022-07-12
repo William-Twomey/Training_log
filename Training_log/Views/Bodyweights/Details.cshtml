@@ -1,0 +1,34 @@
+﻿@model Training_log.Models.Bodyweight
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bodyweight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfLift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfLift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightKG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightKG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

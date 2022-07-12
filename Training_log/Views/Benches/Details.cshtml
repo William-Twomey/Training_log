@@ -1,0 +1,42 @@
+﻿@model Training_log.Models.Bench
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bench</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfLift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfLift)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightKG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightKG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repetitions)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repetitions)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

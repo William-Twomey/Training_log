@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Training_log.Models.Bench>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfLift)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightKG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Repetitions)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfLift)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightKG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Repetitions)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

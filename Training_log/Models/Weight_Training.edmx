@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Weight_TrainingDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bench">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfLift" Type="smalldatetime" Nullable="false" />
+          <Property Name="WeightKG" Type="float" Nullable="false" />
+          <Property Name="Repetitions" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bodyweight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfLift" Type="smalldatetime" Nullable="false" />
+          <Property Name="WeightKG" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deadlift">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfLift" Type="smalldatetime" Nullable="false" />
+          <Property Name="WeightKG" Type="float" Nullable="false" />
+          <Property Name="Repetitions" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Squat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateOfLift" Type="smalldatetime" Nullable="false" />
+          <Property Name="WeightKG" Type="float" Nullable="false" />
+          <Property Name="Repetitions" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Weight_TrainingDBModelStoreContainer">
+          <EntitySet Name="Bench" EntityType="Self.Bench" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bodyweight" EntityType="Self.Bodyweight" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deadlift" EntityType="Self.Deadlift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Squat" EntityType="Self.Squat" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Weight_TrainingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bench">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfLift" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="WeightKG" Type="Double" Nullable="false" />
+          <Property Name="Repetitions" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bodyweight">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfLift" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="WeightKG" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deadlift">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfLift" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="WeightKG" Type="Double" Nullable="false" />
+          <Property Name="Repetitions" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Squat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfLift" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="WeightKG" Type="Double" Nullable="false" />
+          <Property Name="Repetitions" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Weight_TrainingDBEntitiesCTX" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Benches" EntityType="Self.Bench" />
+          <EntitySet Name="Bodyweights" EntityType="Self.Bodyweight" />
+          <EntitySet Name="Deadlifts" EntityType="Self.Deadlift" />
+          <EntitySet Name="Squats" EntityType="Self.Squat" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Weight_TrainingDBModelStoreContainer" CdmEntityContainer="Weight_TrainingDBEntitiesCTX">
+          <EntitySetMapping Name="Benches">
+            <EntityTypeMapping TypeName="Weight_TrainingDBModel.Bench">
+              <MappingFragment StoreEntitySet="Bench">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateOfLift" ColumnName="DateOfLift" />
+                <ScalarProperty Name="WeightKG" ColumnName="WeightKG" />
+                <ScalarProperty Name="Repetitions" ColumnName="Repetitions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bodyweights">
+            <EntityTypeMapping TypeName="Weight_TrainingDBModel.Bodyweight">
+              <MappingFragment StoreEntitySet="Bodyweight">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateOfLift" ColumnName="DateOfLift" />
+                <ScalarProperty Name="WeightKG" ColumnName="WeightKG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deadlifts">
+            <EntityTypeMapping TypeName="Weight_TrainingDBModel.Deadlift">
+              <MappingFragment StoreEntitySet="Deadlift">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateOfLift" ColumnName="DateOfLift" />
+                <ScalarProperty Name="WeightKG" ColumnName="WeightKG" />
+                <ScalarProperty Name="Repetitions" ColumnName="Repetitions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Squats">
+            <EntityTypeMapping TypeName="Weight_TrainingDBModel.Squat">
+              <MappingFragment StoreEntitySet="Squat">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DateOfLift" ColumnName="DateOfLift" />
+                <ScalarProperty Name="WeightKG" ColumnName="WeightKG" />
+                <ScalarProperty Name="Repetitions" ColumnName="Repetitions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
