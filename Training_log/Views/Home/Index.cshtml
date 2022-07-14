@@ -9,20 +9,20 @@
 
 <div class="row">
     <div class="col-sm-4">
-        <div class="card text-center border">
+        <div class="card text-center border bg-secondary">
             <img src="~/Content/Images/squat.PNG" class="card-img-top rounded mx-auto d-block mt-4" style="width: 15rem; height: 15rem;" alt="Squat" />
             <div class="card-body">
                 <h3 class="card-title">Squat</h3>
                 <p class="card-text">Add, Update or Look at your </p>
                 @using (Html.BeginForm("Index", "Squats"))
                 {
-                    <input type="submit" value="View" class="btn-success" />
+                    <input type="submit" value="Squat" class="btn-success" />
                 }
             </div>
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-center">
+        <div class="card text-center bg-secondary">
             <img src="~/Content/Images/bench.PNG" class="card-img-top rounded mx-auto d-block mt-4" style="width: 15rem; height: 15rem;" alt="Bench" />
             <div class="card-body">
                 <h3 class="card-title">Bench Press</h3>
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-center">
+        <div class="card text-center bg-secondary">
             <img src="~/Content/Images/deadlift.PNG" class="card-img-top rounded mx-auto d-block mt-4" style="width: 15rem; height: 15rem;" alt="Deadlift" />
             <div class="card-body">
                 <h3 class="card-title">Deadlift</h3>

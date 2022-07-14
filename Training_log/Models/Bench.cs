@@ -18,9 +18,10 @@ namespace Training_log.Models
         public int Id { get; set; }
 
         [Display(Name = "Date")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         [Required]
         public System.DateTime DateOfLift { get; set; }
-        [Display(Name = "Weight")]
+        [Display(Name = "Weight KG")]
         [Required]
         public double WeightKG { get; set; }
         public int Repetitions { get; set; }

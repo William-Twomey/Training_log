@@ -1,0 +1,42 @@
+﻿@using Training_log.ViewModels
+@model List<LiftsVM>
+
+<h2>Bench Press In Pounds</h2>
+
+<p class="d-inline-block">
+    <input type="button" class="btn btn-success" value="Home" onclick="location.href='@Url.Action("Index", "Home")'" />
+
+    <input type="button" class="btn btn-success" value="Pounds" onclick="location.href='@Url.Action("Index", "Benches")'" />
+
+</p>
+
+<table class="table table-primary">
+
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Repititions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lift in Model)
+        {
+            using (Html.BeginForm("Index", "Weights", FormMethod.Post))
+            {
+
+                <tr>
+                    <td class="col-md-3">
+                        @Html.DisplayFor(modelItem => lift.Date)
+                    </td>
+                    <td class="col-md-3">
+                        @Html.DisplayFor(modelItem => lift.WeightLifted)
+                    </td>
+                    <td class="col-md-3">
+                        @Html.DisplayFor(modelItem => lift.Reps)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

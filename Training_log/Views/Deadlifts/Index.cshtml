@@ -8,6 +8,11 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    
+    @using(Html.BeginForm("Index", "DeadliftPounds"))
+    {
+        <input type="submit" value="Weight in Pounds" class="btn-success" />
+    }
 </p>
 <table class="table">
     <tr>

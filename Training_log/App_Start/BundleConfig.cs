@@ -23,7 +23,7 @@ namespace Training_log
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrapPulse.css",
                       "~/Content/site.css"));
         }
     }

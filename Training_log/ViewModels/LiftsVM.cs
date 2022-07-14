@@ -6,11 +6,14 @@ using System.Web;
 
 namespace Training_log.ViewModels
 {
-    public class LiftsVM
+    public partial class LiftsVM
     {
         public int Id { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        [Required]
+        public DateTime Date { get; set; }
 
-        [Display(Name = "Weight")]
+        [Display(Name = "Weight KG")]
         [Required]
         public double WeightLifted { get; set; }
         [Display(Name = "Repititions")]
