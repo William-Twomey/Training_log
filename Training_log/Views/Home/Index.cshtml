@@ -2,17 +2,30 @@
     ViewBag.Title = "Home Page";
 }
 
+@Model
+
 <div class="jumbotron text-center">
     <h1>Weight Training Log</h1>
     <p class="lead">@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year</p>
 </div>
 
 <div class="row">
-    <div class="col-sm-4">
-        <div class="card text-center border bg-secondary">
-            <img src="~/Content/Images/squat.PNG" class="card-img-top rounded mx-auto d-block mt-4" style="width: 15rem; height: 15rem;" alt="Squat" />
+    <div class="col-sm-4 ">
+        <div class="card text-center border bg-secondary border border-primary">
+            <img src="~/Content/Images/squat.PNG" class="card-img-top rounded mx-auto d-block mt-4 border border-primary" style="width: 15rem; height: 15rem;" alt="Squat" />
             <div class="card-body">
                 <h3 class="card-title">Squat</h3>
+                <h5>Previous Lift</h5>
+                <p>
+                    @ViewBag.SquatLiftDate
+                </p>
+                <p>
+                    @ViewBag.SquatLiftWeight KG
+                </p>
+                <p>
+                    @ViewBag.SquatLiftReps Reps
+                </p>
+
                 <p class="card-text">Add, Update or Look at your </p>
                 @using (Html.BeginForm("Index", "Squats"))
                 {
@@ -22,10 +35,20 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-center bg-secondary">
-            <img src="~/Content/Images/bench.PNG" class="card-img-top rounded mx-auto d-block mt-4" style="width: 15rem; height: 15rem;" alt="Bench" />
+        <div class="card text-center bg-secondary border border-primary">
+            <img src="~/Content/Images/bench.PNG" class="card-img-top rounded mx-auto d-block mt-4 border border-primary" style="width: 15rem; height: 15rem;" alt="Bench" />
             <div class="card-body">
                 <h3 class="card-title">Bench Press</h3>
+                <h5>Previous Lift</h5>
+                <p>
+                    @ViewBag.BenchLiftDate
+                </p>
+                <p>
+                    @ViewBag.BenchLiftWeight KG
+                </p>
+                <p>
+                    @ViewBag.BenchLiftReps Reps
+                </p>
                 <p class="card-text">Add, Update or Look at your</p>
                 @using (Html.BeginForm("Index", "Benches"))
                 {
@@ -35,10 +58,20 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-center bg-secondary">
-            <img src="~/Content/Images/deadlift.PNG" class="card-img-top rounded mx-auto d-block mt-4" style="width: 15rem; height: 15rem;" alt="Deadlift" />
+        <div class="card text-center bg-secondary border border-primary">
+            <img src="~/Content/Images/deadlift.PNG" class="card-img-top rounded mx-auto d-block mt-4 border border-primary" style="width: 15rem; height: 15rem;" alt="Deadlift" />
             <div class="card-body">
                 <h3 class="card-title">Deadlift</h3>
+                <h5>Previous Lift</h5>
+                <p>
+                    @ViewBag.DeadLiftDate
+                </p>
+                <p>
+                    @ViewBag.DeadLiftWeight KG
+                </p>
+                <p>
+                    @ViewBag.DeadLiftReps Reps
+                </p>
                 <p class="card-text">Add, Update or Look at your</p>
                 @using (Html.BeginForm("Index", "Deadlifts"))
                 {
