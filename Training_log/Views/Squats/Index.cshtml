@@ -4,10 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Squat</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <input type="button" class="btn btn-success" value="Create" onclick="location.href='@Url.Action("Create", "Squats")'" />
+    <input type="button" class="btn btn-info" value="Pounds" onclick="location.href='@Url.Action("Index", "SquatPounds")'" />
+
+
 </p>
 <table class="table">
     <tr>
@@ -35,11 +38,15 @@
             @Html.DisplayFor(modelItem => item.Repetitions)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning "}) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
         </td>
     </tr>
+      
+
+
+
 }
 
 </table>

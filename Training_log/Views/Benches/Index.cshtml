@@ -7,7 +7,7 @@
 <h2>Bench Press</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <input type="button" class="btn btn-success" value="Create" onclick="location.href='@Url.Action("Create", "Benches")'" />
 </p>
 <table class="table">
     <tr>
@@ -23,23 +23,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfLift)
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfLift)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeightKG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Repetitions)
+            </td>
+            <td>
+                <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning "}) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WeightKG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Repetitions)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+            </td>
+        </tr>
+    }
 
 </table>
+
+
+    

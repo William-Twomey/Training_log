@@ -1,11 +1,11 @@
 ﻿@using Training_log.ViewModels
 @model List<LiftsVM>
 
-<h2>Deadifts In Pounds</h2>
+<h2>Squats In Pounds</h2>
 
 <p class="d-inline-block">
     <input type="button" class="btn btn-success" value="Home" onclick="location.href='@Url.Action("Index", "Home")'" />
-    <input type="button" class="btn btn-info" value="Kilos" onclick="location.href='@Url.Action("Index", "Deadlifts")'" />
+    <input type="button" class="btn btn-info" value="Kilos" onclick="location.href='@Url.Action("Index", "Squats")'" />
 </p>
 
 <table class="table table-primary">
@@ -18,26 +18,23 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var lift in Model)
+        @foreach (var squat in Model)
         {
             using (Html.BeginForm("Index", "Weights", FormMethod.Post))
             {
 
                 <tr>
                     <td class="col-md-3">
-                        @Html.DisplayFor(modelItem => lift.Date)
+                        @Html.DisplayFor(modelItem => squat.Date)
                     </td>
                     <td class="col-md-3">
-                        @Html.DisplayFor(modelItem => lift.WeightLifted)
+                        @Html.DisplayFor(modelItem => squat.WeightLifted)
                     </td>
                     <td class="col-md-3">
-                        @Html.DisplayFor(modelItem => lift.Reps)
+                        @Html.DisplayFor(modelItem => squat.Reps)
                     </td>
                 </tr>
             }
         }
     </tbody>
 </table>
-
-
-                       
